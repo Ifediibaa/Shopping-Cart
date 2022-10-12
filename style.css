@@ -1,0 +1,175 @@
+body {
+    margin: 0;
+    min-width: var(--min-width);
+    color: var(--color-black);
+    font-family: var(--base-font-family);
+  }
+  .main-container {
+    max-width: var(--max-width);
+    display: grid;
+    grid-gap: var(--base-padding);
+    grid-template-columns: 1fr 3fr;
+    margin: 0 auto;
+    padding: 0 var(--base-padding);
+   
+  }
+  
+section{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-direction: column;
+  margin-left: 40px;
+  
+}
+.image {
+    max-width: 65px;
+   
+  }
+  .products {
+    border-radius: 3px;
+    border: 8px ridge grey ;
+    display: grid;
+    overflow: auto;
+    width: 750px;
+    grid-template-columns: repeat(3, 1fr);
+  
+}
+
+  .product {
+    border: groove lightgray;      
+    margin: 25px;
+    padding: 20px;
+  }
+  .product:hover {
+    border-style: solid;
+  }
+  button{    
+    width:90px ; 
+    height:35px ;
+    color: rgb(152, 240, 211);
+    background-color: rgb(52, 48, 48);  
+}
+button:hover {
+  border-style: solid;
+}
+.product:hover .image {
+  animation: .5s shake-product-image;
+}
+@keyframes shake-product-image {
+  25% {
+    transform: rotate(-40deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }  
+  75% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+
+
+h2{
+  font-style: italic;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+h3{
+  font-style: oblique;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+
+/* /* ----------------- Cart ----------------- */
+.cart__item__image {
+  height: 30px;
+  
+}
+.section1{
+  display: flex;
+  
+}
+.cart { 
+  width: 100px;
+  display: flexbox;
+  overflow-x: hidden;
+  overflow-y: auto;
+  
+}
+.cart h3 {
+  margin: 0;
+  display: grid;
+}
+.cart__item {
+  display: grid;
+  grid-template-columns: 2rem 7rem 3rem auto 1rem auto auto;
+  justify-content: space-between;
+  align-items: center;  
+  text-align: center;
+  padding: var(--base-padding);
+  border: 2px dashed var(--color-gray-light);
+  animation: .3s add-cart-item;
+}
+
+
+
+
+
+
+
+@keyframes add-cart-item {
+  from {
+    margin-left: -200px;
+    margin-right: 200px;
+    opacity: 0;
+  }
+  to {
+    margin-left: 0;
+    margin-right: 0;
+    opacity: 1;
+  }
+}
+
+.cart__item--removed {
+  animation: .3s remove-cart-item;
+}
+
+@keyframes remove-cart-item {
+  to {
+    margin-left: 200px;
+    margin-right: -200px;
+    opacity: 0;
+  }
+}
+
+
+
+@media screen and (min-width: 600px) {
+  .cart__item__image {
+    max-width: 38.5px;
+  }
+}
+
+.cart__item__price:before {
+  content: '$';
+}
+
+.cart-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--base-padding);
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(255, 255, 255, .7);
+  cursor: wait;
+}
+ 
